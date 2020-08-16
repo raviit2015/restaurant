@@ -25,5 +25,23 @@ namespace ECommerce.ApplicationFacade
         {
              return _loginRepository.Login(user);
         }
+
+        public JsonResponse<User> UserLogin(User user)
+        {
+            return _loginRepository.UserLogin(user);
+        }
+
+        public JsonResponse<int> UserSignUp(User user)
+        {
+            return _loginRepository.UserSignUp(user);
+        }
+
+
+        JsonResponse<User> ILoginFacade.GetUserByUserID(string userID)
+        {
+            return _loginRepository.GetUserByUserID(userID);
+        }
+
+        
     }
 }

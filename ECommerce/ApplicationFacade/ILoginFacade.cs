@@ -12,5 +12,10 @@ namespace ECommerce.ApplicationFacade
         JsonResponse<string> Login(User user);
 
         JsonResponse<List<User> >GetAllEmployees();
+
+        JsonResponse<User> UserLogin(User user);
+
+        JsonResponse<int> UserSignUp(User user);
+        JsonResponse<User> GetUserByUserID(string userID);
     }
 }

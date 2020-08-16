@@ -41,6 +41,9 @@ namespace ECommerce
         {
             services.AddTransient<ILoginFacade, LoginFacade>();
             services.AddTransient<ILoginRepository, LoginRepository>();
+
+            services.AddTransient<IProductFacade, ProductFacade>();
+            services.AddTransient<IProductRepository, ProductRepository>();
         }
 
         private void SetupJWTServices(IServiceCollection services)

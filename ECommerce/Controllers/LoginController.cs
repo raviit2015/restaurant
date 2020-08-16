@@ -21,44 +21,16 @@ namespace ECommerce.Controllers
     public class LoginController : ControllerBase
     {
         private ILoginFacade _loginFacade;
-        private IConfiguration _config;
 
         public LoginController(ILoginFacade loginFacade, IConfiguration config)
         {
             _loginFacade = loginFacade;
-            _config = config;
-        }
-        [HttpGet("gettoken")]
-        public Object GetToken()
-        {
-            string key = "my_secret_key_12345"; //Secret key which will be used later during validation    
-            var issuer = "http://mysite.com";  //normally this will be your site URL    
-
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-
-            //Create a List of Claims, Keep claims name short    
-            var permClaims = new List<Claim>();
-            permClaims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
-            permClaims.Add(new Claim("valid", "1"));
-            permClaims.Add(new Claim("userid", "1"));
-            permClaims.Add(new Claim("name", "bilal"));
-
-            //Create Security Token object by giving required parameters    
-            var token = new JwtSecurityToken(issuer, //Issure    
-                            issuer,  //Audience    
-                            permClaims,
-                            expires: DateTime.Now.AddDays(1),
-                            signingCredentials: credentials);
-            var jwt_token = new JwtSecurityTokenHandler().WriteToken(token);
-            return new { data = jwt_token };
         }
 
-
-        [HttpGet("Test")]
-        public JsonResponse<string> Test(User user)
+        [HttpPost("Login")]
+        public JsonResponse<User> Login(User user)
         {
-            return (_loginFacade.Login(user));
+            return (_loginFacade.UserLogin(user));
         }
 
         [HttpGet("GetAllEmployees")]
@@ -67,6 +39,19 @@ namespace ECommerce.Controllers
             return (_loginFacade.GetAllEmployees());
         }
 
+
+        [HttpPost("UserSignUp")]
+        public JsonResponse<int> UserSignUp(User user)
+        {
+            return (_loginFacade.UserSignUp(user));
+        }
+
+        [HttpGet("GetUserByUserID/{userid}")]
+        public JsonResponse<User> GetUserByUserID(string userId)
+        {
+            return (_loginFacade.GetUserByUserID(userId));
+        }
+        
 
         [Authorize]
         [HttpGet("testVerified")]
