@@ -40,6 +40,24 @@ namespace ECommerce.Repository
             return jsonResponse;
         }
 
+
+
+        public JsonResponse<List<Item>> GetItemCategories()
+        {
+            JsonResponse<List<Item>> jsonResponse = new JsonResponse<List<Item>>();
+            try
+            {
+                jsonResponse.data = GetItemsCategories2();
+                jsonResponse.status = new ServiceStatus(200);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return jsonResponse;
+        }
+
         private List<Item> GetAllItems2()
         {
             DataTable ResultDT = new DataTable();
@@ -67,6 +85,33 @@ namespace ECommerce.Repository
             }
             return dt;
         }
-     
+        private List<Item> GetItemsCategories2()
+        {
+            DataTable ResultDT = new DataTable();
+            ResultDT = GetItemsCategories3();
+            List<Item> Studentlist = new List<Item>();
+            Studentlist = DataTableToList.ConvertToList<Item>(ResultDT);
+            return Studentlist;
+        }
+        private DataTable GetItemsCategories3()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand("sp_get_item_categories", connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return dt;
+        }
+
     }
 }

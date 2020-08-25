@@ -14,5 +14,8 @@ namespace ECommerce.Models
         public string available_as { get; set; }
         public string category { get; set; }
         public int available_as_id { get; set; }
+        public int category_id { get; set; }
+        public string category_name { get; set; }
+
     }
 }

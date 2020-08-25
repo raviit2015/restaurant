@@ -1,8 +1,9 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\ravis\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\ravis\\.nuget\\packages"
+      "C:\\Users\\Ravi\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Ravi\\.nuget\\packages",
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ]
   }
 }

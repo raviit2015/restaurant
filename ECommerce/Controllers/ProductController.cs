@@ -22,5 +22,13 @@ namespace ECommerce.Controllers
         {
             return (_productFacade.GetAllItems());
         }
+
+        [HttpGet("GetItemCategories")]
+        public JsonResponse<List<Item>> GetItemCategories()
+        {
+            return (_productFacade.GetItemCategories());
+        }
+
+        
     }
 }

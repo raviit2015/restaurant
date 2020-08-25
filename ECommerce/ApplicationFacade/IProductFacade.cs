@@ -10,5 +10,6 @@ namespace ECommerce.ApplicationFacade
     public interface IProductFacade
     {
         JsonResponse<List<Item>> GetAllItems();
+        JsonResponse<List<Item>> GetItemCategories();
     }
 }

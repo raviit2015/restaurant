@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\restaurant\\ECommerce\\ECommerce.csproj": {}
+    "E:\\Projects\\Restaurant\\restaurant\\ECommerce\\ECommerce.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\restaurant\\ECommerce\\ECommerce.csproj": {
+    "E:\\Projects\\Restaurant\\restaurant\\ECommerce\\ECommerce.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\restaurant\\ECommerce\\ECommerce.csproj",
+        "projectUniqueName": "E:\\Projects\\Restaurant\\restaurant\\ECommerce\\ECommerce.csproj",
         "projectName": "ECommerce",
-        "projectPath": "D:\\Projects\\restaurant\\ECommerce\\ECommerce.csproj",
-        "packagesPath": "C:\\Users\\ravis\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\restaurant\\ECommerce\\obj\\",
+        "projectPath": "E:\\Projects\\Restaurant\\restaurant\\ECommerce\\ECommerce.csproj",
+        "packagesPath": "C:\\Users\\Ravi\\.nuget\\packages\\",
+        "outputPath": "E:\\Projects\\Restaurant\\restaurant\\ECommerce\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ravis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ravi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

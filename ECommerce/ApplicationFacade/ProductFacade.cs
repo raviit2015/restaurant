@@ -20,5 +20,12 @@ namespace ECommerce.ApplicationFacade
         {
             return _productRepository.GetAllItems();
         }
+
+        public JsonResponse<List<Item>> GetItemCategories()
+        {
+            return _productRepository.GetItemCategories();
+        }
+
+        
     }
 }

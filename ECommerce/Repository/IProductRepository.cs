@@ -10,5 +10,6 @@ namespace ECommerce.Repository
     public interface IProductRepository
     {
         JsonResponse<List<Item>> GetAllItems();
+        JsonResponse<List<Item>> GetItemCategories();
     }
 }
